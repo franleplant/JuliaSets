@@ -14,35 +14,15 @@ var puntual_calc_factory = function (p) {
 	var Im,Re;
 
 
-	var delta;
-
-
 	return function (zi){
 
 		z =  zi;
 
 		for( i = 1; i < max_iteration; i++){
 
+			w = z.pow(2).add(c);
 
-			Re =  square( z.Re() ) - square( z.Im() ) + c.Re() ; 
-			Im = 2 * z.Re() * z.Im() + c.Im();
-
-			w = Complex(Re, Im);
-
-
-			delta = w.module() - z.module();
-
-			// No pertenece al conjunto
 			if( w.module() > 2) break;
-			//console.log(w.self);
-			
-/*			if (delta <= 0 + tolerance) {
-				//Pertenece al conjunto
-				i = Infinity;
-				break;
-
-			};
-			*/
 
 			z = Complex( w.Re(), w.Im() );	
 			

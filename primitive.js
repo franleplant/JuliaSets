@@ -19,6 +19,39 @@ var Complex = function (Re,Im) {
 
 	that.Im = ret_factory(y);
 
+	that.add = function (z2) {
+		var Re = that.Re() + z2.Re();
+		var Im = that.Im() + z2.Im();
+		return Complex(Re ,Im);
+
+	};
+
+	that.multiply = function (z2){
+
+		var a = that.Re();
+		var b = that.Im();
+		var c = z2.Re();
+		var d = z2.Im();
+
+		var Re = a*c - b*d;
+		var Im = a*d + b*c;
+
+		return Complex(Re ,Im);
+	};
+
+	that.pow = function (exp){
+		if(exp < 2) return that;
+
+		var z = that.multiply(that);
+		var j;
+		for( j = 2; j < exp; j++){
+			z = z.multiply(that);
+		};
+
+
+		return z;
+	};
+
 	that.self = " " + x + " + " + y + "i";
 
 	that.module = function (){

@@ -1,9 +1,15 @@
-body {
+div {
+	display: block;
+width: 100%;
+height: 30px;
 
-
+	
 }
 
-div {
-
+#clock {
+	display: inline-block;
+position: relative;
+width: 100px;
+margin-right: 10px;
 	
 }

@@ -1,10 +1,16 @@
 
-var height = 300,
-	width = 300;
-var resolution = 0.005;
+var height = 1000,
+	width = 1000;
+
+var range = 3;
+var z0 = Complex(range/2,range/2);
+// console.log dentro del worker:  throw JSON.stringify({data:"algo paso aca"})
+
+var resolution = range/width;
+
 var c = Complex(0.279, 0);
-var z0 = Complex(1,1.2);
-var max_iteration = 1000;
+
+var max_iteration = 100;
 
 
 var n = height;
@@ -28,7 +34,6 @@ A.forAll(function (i,j,z_old){
 
 	return Complex(Re,Im);
 });
-// console.log("a show")
-// A.show();
+
 
 var M = matrix_calc(A);
