@@ -2,7 +2,9 @@
 
 addEventListener('message', function(e) {
 	importScripts('primitive.js');
-	importScripts('a.js');
+	importScripts('puntualCalc.js');
+	importScripts('matrixCalc.js');
+	importScripts('init.js');
 
-  	postMessage(v);
+  	postMessage(JSON.stringify(M));
 }, false);

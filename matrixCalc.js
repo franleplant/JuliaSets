@@ -21,13 +21,12 @@ var matrix_calc_factory = function (p){
 			for( j = 0; j < m; j++ ){
 
 				M[i][j] = calc( A[i][j] );
-				//M[i][j] = Infinity;
 
 			};
 
 		};
 
-		M.showN();
+		//M.showN();
 		return M;
 
 	}
